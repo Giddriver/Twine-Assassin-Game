@@ -100,12 +100,13 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Assassin" startnode="1" creator="Twine" creator-version="2.3.5" ifid="7C81327A-69D3-4337-9C99-E0CA36FA8143" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Title Page" tags="" position="793,38.5" size="100,100">Hmm whats a good assassin game name? Crimson Gold? Cain&#39;s Diciple? Biased Mediation Inc.? For now the name is Assassin Game (WIP).
+	<tw-storydata name="Assassin" startnode="1" creator="Twine" creator-version="2.3.5" ifid="7C81327A-69D3-4337-9C99-E0CA36FA8143" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Title Page" tags="" position="800,0" size="100,100">Hmm whats a good assassin game name? Crimson Gold? Cain&#39;s Diciple? Biased Mediation Inc.? For now the name is Assassin Game (WIP).
 
-[[Start Here]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="1512,218.5" size="100,100">&lt;&lt;set $background = &quot;unknown&quot;&gt;&gt;
+[[Start Here]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="1200,0" size="100,100">&lt;&lt;set $background = &quot;unknown&quot;&gt;&gt;
 &lt;&lt;set $stealth = 0&gt;&gt;
 &lt;&lt;set $charisma = 0&gt;&gt;
 &lt;&lt;set $cunning = 0&gt;&gt;
+&lt;&lt;set $awareness = 0&gt;&gt;
 &lt;&lt;set $guild_relations = 0&gt;&gt;
 &lt;&lt;set $money = 0&gt;&gt;
 &lt;&lt;set $weapon = &quot;fists&quot;&gt;&gt;
@@ -113,38 +114,40 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;&lt;set $rival_opinion = 0&gt;&gt;
 &lt;&lt;set $trustworthiness = 0&gt;&gt;
 &lt;&lt;set $reputation = 0&gt;&gt;
+&lt;&lt;set $relation = 0&gt;&gt;
 &lt;&lt;set $morality = 0&gt;&gt;
 &lt;&lt;set $hideout = &quot;none&quot;&gt;&gt;
 &lt;&lt;set $fname = &quot;first&quot;&gt;&gt;
 &lt;&lt;set $lname = &quot;last&quot;&gt;&gt;
 &lt;&lt;set $alias = &quot;alias&quot;&gt;&gt;
-&lt;&lt;set $gender = &quot;unknown&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryMenu" tags="" position="1505,398.5" size="100,100">[[Hideout]]
+&lt;&lt;set $gender = &quot;unknown&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryMenu" tags="" position="1200,200" size="100,100">[[Hideout]]
 [[Jobs]]
 [[Character Info]]
-</tw-passagedata><tw-passagedata pid="4" name="Hideout" tags="" position="1355,548.5" size="100,100">Your hideout is a $hideout.</tw-passagedata><tw-passagedata pid="5" name="Jobs" tags="" position="1505,548.5" size="100,100">Current Jobs:
+</tw-passagedata><tw-passagedata pid="4" name="Hideout" tags="" position="1075,325" size="100,100">Your hideout is a $hideout.</tw-passagedata><tw-passagedata pid="5" name="Jobs" tags="" position="1200,325" size="100,100">Current Jobs:
 
 
 
-Past Jobs:</tw-passagedata><tw-passagedata pid="6" name="Character Info" tags="" position="1655,548.5" size="100,100">Your stealth is $stealth.
+Past Jobs:</tw-passagedata><tw-passagedata pid="6" name="Character Info" tags="" position="1325,325" size="100,100">Your stealth is $stealth.
 Your charisma is $charisma.
 Your cunning is $cunning.
+Your awareness is $awareness
 You have $money dollars.
 Your relationship with the guild is $guild_relations.
 Your trustworthiness is $trustworthiness.
 Your reputation is $relation.
-Your morality is $morality.</tw-passagedata><tw-passagedata pid="7" name="Start Here" tags="" position="793,188.5" size="100,100">Now maybe here we can have fluff about the world in general. Just a few lines describing the time period and basic culture. Why people are hiring assassins. Then we can ask about the assassin you are playing as.
+Your morality is &lt;&lt;if $morality &lt; 0&gt;&gt; Criminal  &lt;&lt;elseif $morality is 0&gt;&gt; Unbothered &lt;&lt;else&gt;&gt; Saintly &lt;&lt;endif&gt;&gt;.</tw-passagedata><tw-passagedata pid="7" name="Start Here" tags="" position="800,125" size="100,100">Now maybe here we can have fluff about the world in general. Just a few lines describing the time period and basic culture. Why people are hiring assassins. Then we can ask about the assassin you are playing as.
 
 So. Lets start with something basic. What&#39;s your name? Your civilain name, that is. 
 
 My first name is &lt;&lt;textbox &quot;$fname&quot; &quot;Jim&quot; &gt;&gt;. My last name is &lt;&lt;textbox &quot;$lname&quot; &quot;Regular&quot; &gt;&gt;.
 
-[[Next-&gt;CharInfo1]]</tw-passagedata><tw-passagedata pid="8" name="Background" tags="" position="794,538.5" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="CharInfo1" tags="" position="798,300.5" size="100,100">
+[[Next-&gt;CharInfo1]]</tw-passagedata><tw-passagedata pid="8" name="Background" tags="" position="800,500" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="CharInfo1" tags="" position="800,250" size="100,100">
 Great! Nice to meet you $fname $lname. Now, while most people you meet in your day to day life know you by your civilian name, what do those in the industry call you?
 
 My work name is &lt;&lt;textbox &quot;$alias&quot; &quot;Murderman&quot; &gt;&gt;.
 
 [[Moving on-&gt;CharInfo2]]
-</tw-passagedata><tw-passagedata pid="10" name="CharInfo2" tags="" position="793,420.5" size="100,100">Ok good. While you are an unknown nobody right now, I&#39;m sure eventually the name $alias will be infamous throughout the Underworld. Moving on. Are you a man or a woman?
+</tw-passagedata><tw-passagedata pid="10" name="CharInfo2" tags="" position="800,375" size="100,100">Ok good. While you are an unknown nobody right now, I&#39;m sure eventually the name $alias will be infamous throughout the Underworld. Moving on. Are you a man or a woman?
 
 I&#39;m a &lt;&lt;listbox &quot;$gender&quot; autoselect&gt;&gt;
 	&lt;&lt;option &quot;Man slaughterer&quot;&gt;&gt;
