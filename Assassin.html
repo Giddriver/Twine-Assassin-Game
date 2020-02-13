@@ -107,6 +107,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;&lt;set $downtime = 0&gt;&gt;
 &lt;&lt;set $stealth = 0&gt;&gt;
 &lt;&lt;set $charisma = 0&gt;&gt;
+&lt;&lt;set $combat = 0&gt;&gt;
 &lt;&lt;set $cunning = 0&gt;&gt;
 &lt;&lt;set $awareness = 0&gt;&gt;
 &lt;&lt;set $guild_relations = 0&gt;&gt;
@@ -125,7 +126,9 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;&lt;set $gender = &quot;unknown&quot;&gt;&gt;
 &lt;&lt;set $lockpicking = false&gt;&gt;
 &lt;&lt;set $wounds = 0&gt;&gt;
-&lt;&lt;set $weakness = &quot;nothing. for I am invincible. MUHAHAHA&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryMenu" tags="" position="1200,200" size="100,100">[[Hideout]]
+&lt;&lt;set $weakness = &quot;nothing. for I am invincible. MUHAHAHA&quot;&gt;&gt;
+&lt;&lt;set $current_job = &quot;&quot;&gt;&gt;
+&lt;&lt;set $past_jobs = &quot;&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryMenu" tags="" position="1199,201" size="100,100">[[Hideout]]
 [[Jobs]]
 [[Character Info]]
 </tw-passagedata><tw-passagedata pid="4" name="Hideout" tags="" position="1075,325" size="100,100">Your hideout is $hideout.
@@ -133,11 +136,13 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 The facilities you currently have in your hideout are:
 *Bed
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Jobs" tags="" position="1200,325" size="100,100">Current Jobs:
+$current_jobs
 
 
-
-Past Jobs:</tw-passagedata><tw-passagedata pid="6" name="Character Info" tags="" position="1325,325" size="100,100">Your stealth is $stealth.
+Past Jobs:
+$past_jobs</tw-passagedata><tw-passagedata pid="6" name="Character Info" tags="" position="1325,325" size="100,100">Your stealth is $stealth.
 Your charisma is $charisma.
+Your combat skill is $combat.
 Your cunning is $cunning.
 Your awareness is $awareness
 You have $money dollars.
@@ -197,7 +202,9 @@ But you did. And now you&#39;re trapped. Guards swarm around your only exit as y
 
 [[Watch for an opportunity. Patience is key in these situations.-&gt;Watch]]
 
-[[I think I can sneak around the guards. I&#39;ll be as silent as moonlight.-&gt;Sneak]]</tw-passagedata><tw-passagedata pid="12" name="Exit" tags="" position="550,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Convince" tags="" position="700,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name="Watch" tags="" position="850,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Sneak" tags="" position="1000,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Downtime" tags="" position="1817,206.5" size="100,100">Your last mission is over and it was a 
+[[I think I can sneak around the guards. I&#39;ll be as silent as moonlight.-&gt;Sneak]]
+
+&lt;&lt;set $current_job = &quot;You were sent to kill the business rival of your employer at his gated mansion. Unfortunately you failed.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Exit" tags="" position="550,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Convince" tags="" position="700,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name="Watch" tags="" position="850,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Sneak" tags="" position="1000,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Downtime" tags="" position="1817,205" size="100,100">Your last mission is over and it was a 
 &lt;&lt;if $mission is &quot;good&quot;&gt;&gt; resounding success, well done and congratulations.
 &lt;&lt;else&gt;&gt; crushing failure, lick your wounds and try again later&lt;&lt;/if&gt;&gt;.
 
