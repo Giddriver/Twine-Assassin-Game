@@ -127,7 +127,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;&lt;set $lockpicking = false&gt;&gt;
 &lt;&lt;set $wounds = 0&gt;&gt;
 &lt;&lt;set $weakness = &quot;nothing. for I am invincible. MUHAHAHA&quot;&gt;&gt;
-&lt;&lt;set $current_job = &quot;&quot;&gt;&gt;
+&lt;&lt;set $current_jobs = &quot;&quot;&gt;&gt;
 &lt;&lt;set $past_jobs = &quot;&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryMenu" tags="" position="1199,201" size="100,100">[[Hideout]]
 [[Jobs]]
 [[Character Info]]
@@ -147,8 +147,8 @@ Your cunning is $cunning.
 Your awareness is $awareness
 You have $money dollars.
 Your relationship with the guild is $guild_relations.
-Your trustworthiness is $trustworthiness.
-Your reputation is $relation.
+Your trustworthiness is&lt;&lt;if $trustworthiness &lt; 0&gt;&gt; unreliable.&lt;&lt;elseif $trustworthiness is 0&gt;&gt; unknown.&lt;&lt;else&gt;&gt; reliable.&lt;&lt;/if&gt;&gt;.
+Your reputation is&lt;&lt;if $reputation &lt; 0&gt;&gt; that you are incompetent.&lt;&lt;elseif $reputation &lt; 5&gt;&gt; debated.&lt;&lt;else&gt;&gt; that you are competent.&lt;&lt;/if&gt;&gt;.
 Your morality is &lt;&lt;if $morality &lt; 0&gt;&gt; Criminal  &lt;&lt;elseif $morality is 0&gt;&gt; Unbothered &lt;&lt;else&gt;&gt; Saintly &lt;&lt;/if&gt;&gt;.
 You are&lt;&lt;if $wounds == 0&gt;&gt; healthy. &lt;&lt;elseif $wounds == 1&gt;&gt; lightly wounded. &lt;&lt;elseif $wounds == 2&gt;&gt; wounded. &lt;&lt;elseif $wounds == 3&gt;&gt; heavily wounded.&lt;&lt;elseif $wounds == 4&gt;&gt; dead.&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Start Here" tags="" position="762,120" size="100,100">Now maybe here we can have fluff about the world in general. Just a few lines describing the time period and basic culture. Why people are hiring assassins. Then we can ask about the assassin you are playing as.
 
@@ -204,7 +204,7 @@ But you did. And now you&#39;re trapped. Guards swarm around your only exit as y
 
 [[I think I can sneak around the guards. I&#39;ll be as silent as moonlight.-&gt;Sneak]]
 
-&lt;&lt;set $current_job = &quot;You were sent to kill the business rival of your employer at his gated mansion. Unfortunately you failed.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Exit" tags="" position="550,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Convince" tags="" position="700,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name="Watch" tags="" position="850,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Sneak" tags="" position="1000,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Downtime" tags="" position="1817,205" size="100,100">Your last mission is over and it was a 
+&lt;&lt;set $current_jobs = &quot;You were sent to kill the business rival of your employer at his gated mansion. Unfortunately you failed.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Exit" tags="" position="550,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Convince" tags="" position="700,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name="Watch" tags="" position="850,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Sneak" tags="" position="1000,800" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Downtime" tags="" position="1817,205" size="100,100">Your last mission is over and it was a 
 &lt;&lt;if $mission is &quot;good&quot;&gt;&gt; resounding success, well done and congratulations.
 &lt;&lt;else&gt;&gt; crushing failure, lick your wounds and try again later&lt;&lt;/if&gt;&gt;.
 
