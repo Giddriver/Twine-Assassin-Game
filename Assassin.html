@@ -142,7 +142,9 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 &lt;&lt;if $hideout neq &quot;none&quot;&gt;&gt;
 The facilities you currently have in your hideout are:
 *Bed
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Jobs" tags="" position="1985,148.33333333333331" size="100,100">Current Jobs:
+&lt;&lt;/if&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="5" name="Jobs" tags="" position="1985,148.33333333333331" size="100,100">Current Jobs:
 $current_jobs
 
 
@@ -220,12 +222,12 @@ You have time before your next mission. Just about $downtime weeks remaining. Wh
 </tw-passagedata><tw-passagedata pid="17" name="River Assassination" tags="" position="167,85.5" size="100,100">#Your target is on a boat. You start the mission on shore</tw-passagedata><tw-passagedata pid="18" name="The Masquerade" tags="" position="371.6666666666667,64.5" size="100,100">#In this mission you assassinate someone at a masquerade ball.</tw-passagedata><tw-passagedata pid="19" name="Anti-Assassination" tags="" position="611.3333333333334,72.5" size="100,100">Paid to assassinate a freelance assassin before he kills your employer</tw-passagedata><tw-passagedata pid="20" name="Combat" tags="" position="1998.3333333333335,324.1666666666667" size="100,100">&lt;&lt;if $ambush == 1000&gt;&gt;&lt;&lt;set $ambush = (($stealth + random(1, 20)) - ($enemy_stats.awareness + random(1, 20)))&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $ambush &gt; 0&gt;&gt;You ambush $enemy_name successfully! They are surprised by your sudden attack and flinch back as your $weapon comes swinging towards them, hitting them before they are able to defend themselves. &lt;&lt;set $enemy_stats.curHP -= 1&gt;&gt;&lt;&lt;else&gt;&gt;You attempt to ambush $enemy_name, but they manage to see you right before you attack and jump out of the way! &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $enemy_stats.curHP == 0 &amp;&amp; $wounds == 4&gt;&gt;
+&lt;&lt;if $enemy_stats.curHP &lt;= 0 &amp;&amp; $wounds &gt;= 4&gt;&gt;
 You and $enemy_name strike each other simultaneously. You both fall to the ground, clutching fatal wounds. You make eye contact with $enemy_name and watch as the life drains from their eyes. Your vision fades not long after. Your body is found next to $enemy_name&#39;s body a few hours later. 
-&lt;&lt;elseif $enemy_stats.curHP == 0&gt;&gt;
+&lt;&lt;elseif $enemy_stats.curHP &lt;= 0&gt;&gt;
 You kill $enemy_name!
 &lt;&lt;set $ambush = 1000&gt;&gt;
-&lt;&lt;elseif $wounds == 4&gt;&gt;
+&lt;&lt;elseif $wounds &gt;= 4&gt;&gt;
 $enemy_name kills you. You die bleeding on the floor, alone...
 &lt;&lt;else&gt;&gt;
 You face off against $enemy_name, both of you circling each other warily as you grip your $weapon.
@@ -239,7 +241,7 @@ What do you want to do?
 [[Heavy Attack]]
 [[Parry]]
 [[Dodge]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Test Combat" tags="" position="1195.3333333333333,142.66666666666666" size="100,100">&lt;&lt;set $weapon = &quot;knife&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Test Combat" tags="" position="1195.3333333333333,142.66666666666666" size="100,100">&lt;&lt;set $weapon = &quot;knife&quot;&gt;&gt;
 &lt;&lt;set $enemy_name = &quot;the training dummy&quot;&gt;&gt;
 &lt;&lt;set $enemy_stats = {stealth: 110, charisma: 0, combat: 0, cunning: 0, awareness: 20, maxHP: 4, curHP: 4, xp_reward: 0}&gt;&gt;
 You approach the training dummy in your hideout.
